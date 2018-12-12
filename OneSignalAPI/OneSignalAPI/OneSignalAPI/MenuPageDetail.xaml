@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage 
+            BackgroundColor="#262b3f"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="OneSignalAPI.MenuPageDetail"
+      xmlns:pages="clr-namespace:OneSignalAPI"
+              NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="False"
+            xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI"
+            
+           >
+    <MasterDetailPage.Master>
+        <pages:MenuPageMaster />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <AbsoluteLayout Grid.Row="0" Grid.Column="0" Padding="-10,0,-10,-5">
+                    <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+                </AbsoluteLayout>
+
+                <Grid Grid.Row="0" Grid.Column="0"  Padding="20,20,20,0" x:Name="mainGridJobs">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="2">
+                        <ActivityIndicator x:Name="activIndicatorJobs" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2" AbsoluteLayout.LayoutFlags="All"/>
+                    </AbsoluteLayout>
+
+                    <AbsoluteLayout Grid.Row="1" Grid.Column="0">
+                        <Button Image="menu.png" Clicked="MenuNavigate" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="2,10,20,20" AbsoluteLayout.LayoutFlags="None" />
+                    </AbsoluteLayout>
+                    <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
+                        <Label Text="My Jobs" TextColor="White" FontSize="28" >
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Raleway-Medium_1" />
+                                    <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                    </StackLayout>
+
+
+                    <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+                        <ListView x:Name="listViewJobs" ItemSelected="ItemSelected" SeparatorVisibility="None" HasUnevenRows="True" BackgroundColor="Transparent"  >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame Padding="0" Margin="3" HasShadow="False"  OutlineColor="Transparent" BackgroundColor="Transparent"  >
+                                            <AbsoluteLayout BackgroundColor="Transparent" >
+                                                <Label Text="TROLLI NAME:" FontSize="12" TextColor="#aed582" AbsoluteLayout.LayoutBounds="5,10,280,30" AbsoluteLayout.LayoutFlags="None">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Label Text="{Binding trollyTitle}" FontSize="14" TextColor="White" AbsoluteLayout.LayoutBounds="95,8,180,30" AbsoluteLayout.LayoutFlags="None">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                                                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Label Text="STATUS:" FontSize="12" TextColor="#aed582" AbsoluteLayout.LayoutBounds="5,40,80,30" AbsoluteLayout.LayoutFlags="None">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Label Text="{Binding status}" FontSize="12" TextColor="White" VerticalTextAlignment="Center" AbsoluteLayout.LayoutBounds="60,32,80,30" AbsoluteLayout.LayoutFlags="None">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                                                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <BoxView BackgroundColor="#4b556b" Opacity="0.40" AbsoluteLayout.LayoutBounds="0,65,1,2" AbsoluteLayout.LayoutFlags="WidthProportional"  />
+                                            </AbsoluteLayout>
+
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+                    </StackLayout>
+                    <Label x:Name="internetCheckJobs" IsVisible="False" TextColor="White" Text="Not Connected to internet" AbsoluteLayout.LayoutBounds="0.55,0.8,185,44" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                </Grid>
+
+
+
+
+                <Grid Grid.Row="0" Grid.Column="0"  Padding="20,20,20,0" x:Name="mainGrid">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="2">
+                        <ActivityIndicator x:Name="activIndicator" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2" AbsoluteLayout.LayoutFlags="All"/>
+                    </AbsoluteLayout>
+
+                    <AbsoluteLayout Grid.Row="1" Grid.Column="0">
+                        <Button Image="menu.png" Clicked="MenuNavigate" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="2,10,20,20" AbsoluteLayout.LayoutFlags="None" />
+                    </AbsoluteLayout>
+                    <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
+                        <Label Text="My Trollies" TextColor="White" FontSize="28" >
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Raleway-Medium_1" />
+                                    <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                    </StackLayout>
+
+
+                    <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+                        <ListView x:Name="listView" ItemSelected="ItemSelected" SeparatorVisibility="None" HasUnevenRows="True" BackgroundColor="Transparent"  >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame Padding="0" Margin="3" HasShadow="False"  OutlineColor="Transparent" BackgroundColor="Transparent"  >
+                                            <AbsoluteLayout BackgroundColor="Transparent" >
+                                                <Label Text="TROLLI NAME:" FontSize="12" TextColor="#aed582" AbsoluteLayout.LayoutBounds="5,10,280,30" AbsoluteLayout.LayoutFlags="None">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Label Text="{Binding trollyTitle}" FontSize="14" TextColor="White" AbsoluteLayout.LayoutBounds="95,8,180,30" AbsoluteLayout.LayoutFlags="None">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                                                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Label Text="STATUS:" FontSize="12" TextColor="#aed582" AbsoluteLayout.LayoutBounds="5,40,80,30" AbsoluteLayout.LayoutFlags="None">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Label Text="{Binding status}" FontSize="12" TextColor="White" VerticalTextAlignment="Center" AbsoluteLayout.LayoutBounds="60,32,80,30" AbsoluteLayout.LayoutFlags="None">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                                                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+
+
+                                                <local:CustomButtonText Text="CLONE" FontSize="12" Clicked="CloneHandle" TextColor="#0a91c9"  BorderColor="#0a91c9" BorderWidth="1" BorderRadius="3" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.95,0.3,80,40" AbsoluteLayout.LayoutFlags="PositionProportional"  CommandParameter="{Binding .}">
+                                                    <local:CustomButtonText.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                                        </OnPlatform>
+                                                    </local:CustomButtonText.FontFamily>
+                                                </local:CustomButtonText>
+                                                <BoxView BackgroundColor="#4b556b" Opacity="0.40" AbsoluteLayout.LayoutBounds="0,65,1,2" AbsoluteLayout.LayoutFlags="WidthProportional"  />
+                                            </AbsoluteLayout>
+
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+                    </StackLayout>
+                    <Label x:Name="internetCheck" IsVisible="False" TextColor="White" Text="Not Connected to internet" AbsoluteLayout.LayoutBounds="0.55,0.8,185,44" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="0" x:Name="firstJobGrid" Padding="20,20,20,0" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                        <Button Image="menu.png" Clicked="MenuNavigate" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="2,10,20,20" AbsoluteLayout.LayoutFlags="None" />
+                    </AbsoluteLayout>
+
+                    <AbsoluteLayout Grid.Row="1" Grid.Column="0">
+                        <Label Text="You have no current or past jobs" FontSize="20" TextColor="#646b7a" HorizontalTextAlignment="Center" AbsoluteLayout.LayoutBounds="0.5,0.5,1,0.3" AbsoluteLayout.LayoutFlags="All"/>
+                    </AbsoluteLayout>
+
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="0" x:Name="firstTrolliGrid" Padding="20,20,20,0" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="50*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                        <Button Image="menu.png" Clicked="MenuNavigate" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="2,10,20,20" AbsoluteLayout.LayoutFlags="None" />
+                    </AbsoluteLayout>
+                    
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                        <local:CustomButtonText x:Name="rate1" BackgroundColor="Transparent" Clicked="FirstTrolli" Image="firstTrolli.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="Create my first Trolli" FontSize="20" TextColor="#646b7a" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="0" x:Name="serviceSelecter">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="50*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                  
+                    
+
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                        <Label Text="What service would you like to use?" FontSize="22" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" >
+                            <local:CustomButtonText Text="Smart Buyer" WidthRequest="120" Clicked="SmartBuyerSelect" HorizontalOptions="CenterAndExpand"/>
+                            <local:CustomButtonText Text="Client" WidthRequest="120" Clicked="ClientSelect" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                        </StackLayout>
+
+                </Grid>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

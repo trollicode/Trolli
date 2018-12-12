@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           
+             xmlns:local="clr-namespace:ListViewWithSubListView.Views"
+     xmlns:locals="clr-namespace:OneSignalAPI;assembly=OneSignalAPI"
+             x:Class="OneSignalAPI.NewAddProduct">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40" x:Name="rightSlide"/>
+         </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <AbsoluteLayout>
+                <AbsoluteLayout Padding="40,0,0,40">
+                <Label Text="Categories" FontSize="18" AbsoluteLayout.LayoutBounds="20,0,1,30" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+                </AbsoluteLayout>
+                <AbsoluteLayout x:Name="hotelStack" Padding="45,40,0,0" AbsoluteLayout.LayoutBounds="0,0,1,0.9" AbsoluteLayout.LayoutFlags="All">
+                    <ListView
+                    x:Name="HotelsList"
+                    BackgroundColor="White"
+                    IsGroupingEnabled="True"
+                    IsPullToRefreshEnabled="true"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    ItemsSource="{Binding Items}"
+                    RefreshCommand="{Binding LoadHotelsCommand}"
+                   
+                    >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                        <Label
+                                            VerticalOptions="Center"
+                                            FontAttributes="Bold"
+                                            FontSize="Medium"
+                                            Text="{Binding .RoomName}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid >
+                                        <Label
+                                                FontAttributes="Bold"
+                                                FontSize="Small"
+                                                Text="{Binding Name}"
+                                                TextColor="Gray"
+                                                VerticalTextAlignment="Center" />
+                                        <Image x:Name="ImgA" Source="{Binding StateIcon}"  Margin="0,0,5,0" HeightRequest="20" WidthRequest="20" HorizontalOptions="End"/>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={x:Reference currentPage}, Path=BindingContext.RefreshItemsCommand}"  NumberOfTapsRequired="1" CommandParameter="{Binding .}"/>
+                                        </Grid.GestureRecognizers>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.GroupHeaderTemplate>
+                    </ListView>
+                </AbsoluteLayout>
+                <Button Text="Click" Clicked="HandlerEvent" BackgroundColor="Gray" AbsoluteLayout.LayoutBounds="0,0.5,40,0.5" AbsoluteLayout.LayoutFlags="HeightProportional,PositionProportional"/>
+
+            </AbsoluteLayout>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <AbsoluteLayout Grid.Row="1" Grid.Column="0">
+                <Label Text="Item Forms" FontSize="18" AbsoluteLayout.LayoutBounds="20,0,1,60" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="3" Grid.Column="0">
+                <Label Text="Item Name" FontSize="14" AbsoluteLayout.LayoutBounds="20,0,1,60" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                <Entry Placeholder="e.g. Home brand Olive oil" x:Name="itemName" AbsoluteLayout.LayoutBounds="20,10,1,60" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="5" Grid.Column="0">
+                <Label Text="Quanity" FontSize="14" AbsoluteLayout.LayoutBounds="20,0,1,60" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                <Button Clicked="DecrementQuantity" Text="-" FontSize="16" AbsoluteLayout.LayoutBounds="20,20,60,40" AbsoluteLayout.LayoutFlags="None"/>
+                <Label x:Name="quantity" Text="1" FontSize="18" AbsoluteLayout.LayoutBounds="90,25,30,20" AbsoluteLayout.LayoutFlags="None"/>
+                <Button Clicked="IncrementQuantity" Text="+" FontSize="16" AbsoluteLayout.LayoutBounds="115,20,60,40" AbsoluteLayout.LayoutFlags="None"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="7" Grid.Column="0">
+                <Label Text="Size" FontSize="14" AbsoluteLayout.LayoutBounds="20,0,1,60" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                <locals:CustomPickerRenderer x:Name="statesPicker" TextColor="Gray" AbsoluteLayout.LayoutBounds="20,25,1,44" AbsoluteLayout.LayoutFlags="WidthProportional">
+                    <Picker.Items>
+                        <x:String>Large</x:String>
+                        <x:String>Regular</x:String>
+                        <x:String>Small</x:String>
+                    </Picker.Items>
+                </locals:CustomPickerRenderer>
+            </AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="9" Grid.Column="0">
+                <Label Text="Notes (optional)" FontSize="14" AbsoluteLayout.LayoutBounds="20,0,1,60" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                <Entry Placeholder="(optional)" x:Name="note" AbsoluteLayout.LayoutBounds="20,10,1,60" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+
+            </AbsoluteLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

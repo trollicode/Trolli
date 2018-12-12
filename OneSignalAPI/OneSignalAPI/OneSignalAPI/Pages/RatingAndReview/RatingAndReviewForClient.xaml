@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+            NavigationPage.HasNavigationBar="False"
+            NavigationPage.BackButtonTitle="False"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="OneSignalAPI.RatingAndReviewForClient"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+            xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI">
+
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <AbsoluteLayout Grid.Row="0" Grid.Column="0" Padding="-10,0,-10,-5">
+            <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        </AbsoluteLayout>
+
+
+        <Grid Grid.Row="0" Grid.Column="0"  Padding="20,20,20,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="120" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                <Button Image="menu.png" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="2,10,20,20" AbsoluteLayout.LayoutFlags="None" />
+            </AbsoluteLayout>
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                <Label Text="RATING" FontSize="28" TextColor="White">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+            <AbsoluteLayout Grid.Row="2" Grid.ColumnSpan="2">
+                <BoxView BackgroundColor="#0a91d2" AbsoluteLayout.LayoutBounds="0,10,28,2" AbsoluteLayout.LayoutFlags="None"/>
+            </AbsoluteLayout>
+
+            <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+               <controls:CircleImage Source="img.png" x:Name="profileImage" Aspect="Fill" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="122" WidthRequest="121"/>
+             </StackLayout>
+
+
+            <StackLayout Grid.Row="4" Grid.ColumnSpan="2">
+                <Label x:Name="clientName" Text="John Wich" Font="24" TextColor="White" 
+                       HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Grid.Row="5" Grid.ColumnSpan="2">
+                
+            </StackLayout>
+            
+            
+            <AbsoluteLayout Grid.Row="6" Grid.ColumnSpan="2">
+
+                <local:CustomButtonText x:Name="rate1" Text="1" Clicked="Rate1Handler"  BackgroundColor="Transparent"  Image="starGrey.png" AbsoluteLayout.LayoutBounds="0.2,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <local:CustomButtonText x:Name="fillRate1" IsVisible="False" Text="1" Clicked="Rate1Handler" BorderColor="Red" Image="starYellow.png" BackgroundColor="Transparent"  AbsoluteLayout.LayoutBounds="0.2,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                <local:CustomButtonText x:Name="rate2" Text="2" Clicked="Rate2Handler"  BackgroundColor="Transparent" Image="starGrey.png" AbsoluteLayout.LayoutBounds="0.35,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <local:CustomButtonText x:Name="fillRate2" IsVisible="False" Text="2" Clicked="Rate2Handler" BorderColor="Red" BackgroundColor="Transparent" Image="starYellow.png" AbsoluteLayout.LayoutBounds="0.35,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                <local:CustomButtonText x:Name="rate3" Text="3" Clicked="Rate3Handler"  BackgroundColor="Transparent" Image="starGrey.png" AbsoluteLayout.LayoutBounds="0.5,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <local:CustomButtonText x:Name="fillRate3" IsVisible="False" Text="3" Clicked="Rate3Handler" BorderColor="Red" BackgroundColor="Transparent" Image="starYellow.png" AbsoluteLayout.LayoutBounds="0.5,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                <local:CustomButtonText x:Name="rate4" Text="4" Clicked="Rate4Handler"  BackgroundColor="Transparent" Image="starGrey.png" AbsoluteLayout.LayoutBounds="0.65,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <local:CustomButtonText x:Name="fillRate4" IsVisible="False" Text="4" Clicked="Rate4Handler" BorderColor="Red" BackgroundColor="Transparent" Image="starYellow.png" AbsoluteLayout.LayoutBounds="0.65,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+
+                <local:CustomButtonText x:Name="rate5" Text="5" Clicked="Rate5Handler"  BackgroundColor="Transparent" Image="starGrey.png" AbsoluteLayout.LayoutBounds="0.8,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <local:CustomButtonText x:Name="fillRate5" IsVisible="False" Text="5" Clicked="Rate5Handler" BorderColor="Red" BackgroundColor="Transparent" Image="starYellow.png" AbsoluteLayout.LayoutBounds="0.8,0.23,40,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            </AbsoluteLayout>
+
+            <StackLayout Grid.Row="7" Grid.ColumnSpan="2">
+                <Label  x:Name="ratingContain"  Text="Good" FontSize="18" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+            
+            
+            <AbsoluteLayout Grid.Row="8" Grid.ColumnSpan="2">
+                <Label Text="Review" TextColor="#aed582" FontSize="18" AbsoluteLayout.LayoutBounds="0.1,0.5,180,44" AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+                <local:MyEntry x:Name="reviewText" Text="" TextColor="White" AbsoluteLayout.LayoutBounds="0.1,0.8,269,44" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </local:MyEntry>
+            </AbsoluteLayout>
+
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" RowSpacing="0" ColumnSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <local:CustomButtonText Grid.Row="0" Grid.Column="0" Text="Save" Clicked="SaveEvent" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd"  />
+            <local:CustomButtonText Grid.Row="0" Grid.Column="1" Text="Main Menu" Clicked="MainMenuEvent"  BackgroundColor="Transparent" StartColor="#2d3c54" EndColor="#262b3f" TextColor="#dadadd" />
+
+
+        </Grid>
+
+
+    </Grid>
+
+</ContentPage>

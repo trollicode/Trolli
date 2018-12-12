@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.HeaderFooterXaml">
+    <ContentPage.Content>
+      <ListView x:Name="listView" 
+    ItemsSource="{Binding Monkeys}" 
+    Header="{Binding Intro}"
+    Footer="{Binding Summary}">
+    <ListView.HeaderTemplate >
+      <DataTemplate>
+        <StackLayout Orientation="Horizontal" 
+            Padding="10,5,5,10"
+            BackgroundColor="Yellow">
+          <Label Text="~~"/>
+          <Label Text="{Binding .}"/>
+          <Label Text="~~"/>
+        </StackLayout>
+      </DataTemplate>
+    </ListView.HeaderTemplate>
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding Name}" Detail="{Binding Description}"></TextCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+    </ContentPage.Content>
+</ContentPage>

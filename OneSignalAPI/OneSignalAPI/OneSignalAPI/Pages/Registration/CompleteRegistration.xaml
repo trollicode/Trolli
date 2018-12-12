@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+             
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RealTrolli.CompleteRegistration"    
+    xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI"
+            xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <AbsoluteLayout Grid.Row="0" Grid.Column="0" Padding="-10,0,-10,-5">
+            <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        </AbsoluteLayout>
+
+
+        <Grid Grid.Row="0" Grid.Column="0"  Padding="20,20,20,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                <Label Text="Sign Up"  FontSize="30" TextColor="White">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+            <AbsoluteLayout Grid.Row="2" Grid.ColumnSpan="2">
+                <BoxView BackgroundColor="#0a91d2" AbsoluteLayout.LayoutBounds="0,10,28,2" AbsoluteLayout.LayoutFlags="None"/>
+            </AbsoluteLayout>
+
+
+            <AbsoluteLayout Grid.Row="3" Grid.ColumnSpan="2">
+                <Label x:Name="starSubrub" Text=" "  TextColor="#ff6600" FontSize="26" AbsoluteLayout.LayoutBounds="0,10,30,30" AbsoluteLayout.LayoutFlags="None"/>
+
+                <Label Text="SUBURB" FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,85,20" AbsoluteLayout.LayoutFlags="None">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <local:MyEntry x:Name="subrub" Text="" TextColor="White" AbsoluteLayout.LayoutBounds="0,25,269,44" AbsoluteLayout.LayoutFlags="None">
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </local:MyEntry>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="4" Grid.ColumnSpan="2">
+                <Label x:Name="starStates" Text=" "  TextColor="#ff6600" FontSize="26" AbsoluteLayout.LayoutBounds="0,10,30,30" AbsoluteLayout.LayoutFlags="None"/>
+
+                <Label Text="STATE" FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,44,20" AbsoluteLayout.LayoutFlags="None">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <local:CustomPickerRenderer x:Name="statesPicker" TextColor="White" AbsoluteLayout.LayoutBounds="0,25,269,44" AbsoluteLayout.LayoutFlags="None">
+                    <Picker.Items>
+                        <x:String>ACT</x:String>
+                        <x:String>NSW</x:String>
+                        <x:String>NT</x:String>
+                        <x:String>QLD</x:String>
+                        <x:String>SA</x:String>
+                        <x:String>TAS</x:String>
+                        <x:String>VIC</x:String>
+                        <x:String>WA</x:String>
+
+                    </Picker.Items>
+                </local:CustomPickerRenderer>
+            </AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="5" Grid.ColumnSpan="2">
+                <Label x:Name="starPostcode" Text=" "  TextColor="#ff6600" FontSize="26" AbsoluteLayout.LayoutBounds="0,10,30,30" AbsoluteLayout.LayoutFlags="None"/>
+
+                <Label Text="POST CODE" FontSize="14" TextColor="#aed582"  AbsoluteLayout.LayoutBounds="0,0,87,20" AbsoluteLayout.LayoutFlags="None">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <local:MyEntry x:Name="postCode" TextColor="White" Text="" Keyboard="Numeric" AbsoluteLayout.LayoutBounds="0,25,269,44" AbsoluteLayout.LayoutFlags="None">
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </local:MyEntry>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="6" Grid.ColumnSpan="2">
+            <Label Text="By tapping Sign up button, I agree to the " TextColor="White" AbsoluteLayout.LayoutBounds="0.5,30,280,30" AbsoluteLayout.LayoutFlags="XProportional">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <local:CustomButtonText Text="terms and conditions" Clicked="TermsAndConditions" BackgroundColor="Transparent" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0.5,45,160,60" AbsoluteLayout.LayoutFlags="XProportional"/>
+                <Label x:Name="validationError" FontSize="14" TextColor="#ff6600" AbsoluteLayout.LayoutBounds="0.5,0.95,200,20" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </AbsoluteLayout>
+            <ActivityIndicator x:Name="activIndicator" AbsoluteLayout.LayoutBounds="0.5,0.5,40,40" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" RowSpacing="0" ColumnSpacing="0" >
+            <local:CustomButtonText x:Name="btnSignUp" Text="Sign up" Clicked="SignUpButton" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"  />
+        </Grid>
+    </Grid>
+
+</ContentPage>

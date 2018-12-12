@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.BackButtonTitle="False"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.MenuPageMaster"
+             xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             
+             Title="Home"  >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="290"/>
+            <RowDefinition Height="*"/>
+        
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Padding="0,0,0,-10">
+            <AbsoluteLayout>
+                <Image Source="menuBkg1.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="HeightProportional,WidthProportional"/>
+            </AbsoluteLayout>
+        </Grid>
+
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <AbsoluteLayout Grid.Row="1" Grid.ColumnSpan="2" Padding="36,0,0,0">
+                <Image Source="Trollilogo.png" AbsoluteLayout.LayoutBounds="0,10,130,19" AbsoluteLayout.LayoutFlags="None" />
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="2" Grid.ColumnSpan="2" Padding="36,0,42,0">
+                <BoxView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="WidthProportional" Color="White" Opacity="0.1"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="3" Grid.ColumnSpan="2">
+                <controls:CircleImage Source="img.png"  x:Name="imageSource" Aspect="Fill" AbsoluteLayout.LayoutBounds="30,31,73,75" AbsoluteLayout.LayoutFlags="None" />
+                <Label x:Name="name" Text="John Smith" FontSize="18" AbsoluteLayout.LayoutBounds="119,31,187,22" AbsoluteLayout.LayoutFlags="None" TextColor="White">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Label x:Name="email" Text="waleed.rafiquex79@gmail.com" FontSize="14" AbsoluteLayout.LayoutBounds="119,55,200,18" AbsoluteLayout.LayoutFlags="None" TextColor="White" Opacity="0.8">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <local:CustomButtonText Text="View Profile" FontSize="12.5" Clicked="ViewProfile" BackgroundColor="Transparent" BorderColor="#aed582" BorderWidth="1" BorderRadius="2" TextColor="#aed582" AbsoluteLayout.LayoutBounds="119,76,104,32" AbsoluteLayout.LayoutFlags="None" >
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                        </OnPlatform>
+                    </Button.FontFamily>
+                </local:CustomButtonText>
+
+                <local:CustomButtonText x:Name="smartBuyerBtn" Text="Smart Buyer" Clicked="SmartBuyerHandler" TextColor="White" BackgroundColor="Transparent" BorderColor="#00629c" BorderRadius="2" BorderWidth="1" AbsoluteLayout.LayoutBounds="20,131,138,40" AbsoluteLayout.LayoutFlags="None">
+                    <local:CustomButtonText.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </local:CustomButtonText.FontFamily>
+                 </local:CustomButtonText>
+                <local:CustomButtonText x:Name="clientBtn" Text="Client" Clicked="ClientHandler" TextColor="White" BackgroundColor="Transparent" BorderColor="#00629c" BorderRadius="2" BorderWidth="1" AbsoluteLayout.LayoutBounds="156,131,138,40" AbsoluteLayout.LayoutFlags="None">
+                    <local:CustomButtonText.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </local:CustomButtonText.FontFamily>
+                </local:CustomButtonText>
+
+             
+
+            </AbsoluteLayout>
+
+
+        </Grid>
+
+
+
+        
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+          
+            <ListView x:Name="listView" ItemSelected="ItemSelect" SeparatorVisibility="None" HasUnevenRows="False" BackgroundColor="#efefef">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="False" OutlineColor="Transparent" BackgroundColor="#efefef">
+                                <AbsoluteLayout Padding="20,0,0,0">
+                                    <Image Source="{Binding imageUrl}" AbsoluteLayout.LayoutBounds="5,0,20,20" AbsoluteLayout.LayoutFlags="None"/>
+                                    <Label Text="{Binding menuName}" FontSize="16" TextColor="#2b364d" AbsoluteLayout.LayoutBounds="40,0,156,20" AbsoluteLayout.LayoutFlags="None">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                </AbsoluteLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ContentPage>

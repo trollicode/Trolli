@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             NavigationPage.HasNavigationBar="False"
+                NavigationPage.BackButtonTitle="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RealTrolli.Registrations">
+    <StackLayout Padding="-10,0,-5,0">
+       
+        <WebView  x:Name="webView" HeightRequest="1000" WidthRequest="1000" />
+     
+    </StackLayout>
+    
+</ContentPage>

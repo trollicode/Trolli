@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+            NavigationPage.HasNavigationBar="False"
+            NavigationPage.BackButtonTitle="False"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="RealTrolli.WelcomeTrolliPage"
+     xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI">
+    <AbsoluteLayout Padding="-5,0,-5,-5">
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        <Image Source="Trollilogo.png" AbsoluteLayout.LayoutBounds="0.5,0.5,135,21" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <ProgressBar Progress="0" x:Name="progressBar" AbsoluteLayout.LayoutBounds="0.5,0.53,135,2" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Label x:Name="internetCheck" IsVisible="False" TextColor="White" Text="Not Connected to internet" AbsoluteLayout.LayoutBounds="0.55,0.8,185,44" AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <local:CustomButtonText Text="Retry" x:Name="RetryVariable" IsVisible="False"  Clicked="RetryEvent" BackgroundColor="Transparent" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0.5,0.84,160,60" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+    </AbsoluteLayout>
+</ContentPage>

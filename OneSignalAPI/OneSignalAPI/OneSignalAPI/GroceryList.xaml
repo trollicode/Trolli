@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.GroceryList"
+             xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI">
+
+    <AbsoluteLayout Padding="-5,0,-5,0">
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <Label Text="Add Grocery Item" TextColor="White" AbsoluteLayout.LayoutBounds="39,20,150,20"  AbsoluteLayout.LayoutFlags="None"/>
+        <local:CustomButtonText Image="AddItem.png" Text="Add Item" BackgroundColor="Transparent" CornerRadius="10" TextColor="White" StartColor="#0075b9" EndColor="#00629c" HorizontalOptions="StartAndExpand" Clicked="AddItems" AbsoluteLayout.LayoutBounds="39,50,150,50"  AbsoluteLayout.LayoutFlags="None"/>
+        <ListView x:Name="listView" BackgroundColor="Transparent" CachingStrategy="RecycleElement" AbsoluteLayout.LayoutBounds="10,120,0.92,0.65" AbsoluteLayout.LayoutFlags="SizeProportional">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="0" Margin="3" HasShadow="True" CornerRadius="10">
+                            <AbsoluteLayout BackgroundColor="#0075b9">
+                            <Label Text="{Binding detailItem}" TextColor="#aed582" AbsoluteLayout.LayoutBounds="5,2,260,80" AbsoluteLayout.LayoutFlags="None">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label AbsoluteLayout.LayoutBounds="5,35,280,80" AbsoluteLayout.LayoutFlags="None" />
+                            <Button Image="editButton.png" BackgroundColor="Transparent" Clicked="EditHandler" AbsoluteLayout.LayoutBounds="0.8,5,30,30" AbsoluteLayout.LayoutFlags="XProportional" CommandParameter="{Binding .}"/>
+                            <Button Image="deleteButtonIcon"  BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.9,5,30,30" AbsoluteLayout.LayoutFlags="XProportional" Clicked="DeleteHandler"  CommandParameter="{Binding .}"/>
+                        </AbsoluteLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <local:CustomButtonText  Text="Back to stores list" Clicked="CloseStore" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+
+    </AbsoluteLayout>
+</ContentPage>

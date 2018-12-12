@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+            
+                xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.AddProduct"
+              xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="False"
+             >
+
+    <Grid RowSpacing="0" ColumnSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1" x:Name="listGrid"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <AbsoluteLayout Grid.Row="0" Grid.Column="0" Padding="-10,0,-10,-5">
+            <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        </AbsoluteLayout>
+
+        <ScrollView>
+            <Grid Grid.Row="0" Grid.Column="0"  Padding="20,20,20,0">
+           
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="20" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="60" />
+
+                    <RowDefinition Height="60" />
+
+
+                </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                <Button Image="menu.png" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="2,10,20,20" AbsoluteLayout.LayoutFlags="None" />
+            </AbsoluteLayout>
+
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                <Label x:Name="storeName" FontSize="28" TextColor="White">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+            <AbsoluteLayout Grid.Row="2" Grid.ColumnSpan="2">
+                <BoxView BackgroundColor="#0a91d2" AbsoluteLayout.LayoutBounds="0,10,28,2" AbsoluteLayout.LayoutFlags="None"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="3" Grid.Column="0">
+                    <Button Image="backArrow.png" BackgroundColor="Transparent" Clicked="BackEvent" AbsoluteLayout.LayoutBounds="0,0,20,20" AbsoluteLayout.LayoutFlags="None" />
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="5" Grid.ColumnSpan="2">
+                <Label Text="Item Name" FontSize="16" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,10,120,44" AbsoluteLayout.LayoutFlags="None">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                    <autocomplete:SfAutoComplete HeightRequest="40" TextSize="18" TextColor="White" x:Name="autoComplete" DropDownBackgroundColor="#384b6d" DropDownTextSize="14" ClearButtonColor="White" DropDownTextColor="White" AbsoluteLayout.LayoutBounds="0,25,0.85,44" AbsoluteLayout.LayoutFlags="WidthProportional" TextHighlightMode="MultipleOccurrence" SuggestionMode="Contains" HighlightedTextColor="#0a91c9" ShowBorder="True" DropDownCornerRadius="2" IgnoreDiacritic="false"  IsSelectedItemsVisibleInDropDown="True">
+                        <autocomplete:SfAutoComplete.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </autocomplete:SfAutoComplete.FontFamily>
+                        <autocomplete:SfAutoComplete.DropDownItemFontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Medium_1" />
+                                <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                            </OnPlatform>
+                        </autocomplete:SfAutoComplete.DropDownItemFontFamily>
+                    </autocomplete:SfAutoComplete>
+                </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="7" Grid.ColumnSpan="2">
+                    <Label Text="Quantity" FontSize="16" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,80,44" AbsoluteLayout.LayoutFlags="None">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <local:MyEntry Keyboard="Numeric" x:Name="Quantity" Text="" TextColor="White" AbsoluteLayout.LayoutBounds="0,25,0.85,44" AbsoluteLayout.LayoutFlags="WidthProportional">
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </local:MyEntry>
+
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="9" Grid.ColumnSpan="2">
+                    <Label Text="Unit" FontSize="16" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,80,44" AbsoluteLayout.LayoutFlags="None"/>
+                <local:CustomPickerRenderer x:Name="Unit" TextColor="White" AbsoluteLayout.LayoutBounds="0,25,0.85,44" AbsoluteLayout.LayoutFlags="WidthProportional" BackgroundColor="Transparent">
+                    <Picker.Items>
+                        <x:String>Kilogram(s)</x:String>
+                        <x:String>Gram(s)</x:String>
+                        <x:String>Litre(s)</x:String>
+                        <x:String>Pack(s)</x:String>
+
+                    </Picker.Items>
+                </local:CustomPickerRenderer>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="11" Grid.ColumnSpan="2">
+                    <Label Text="Size" FontSize="16" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,80,44" AbsoluteLayout.LayoutFlags="None">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <local:CustomPickerRenderer x:Name="Size"  TextColor="White" AbsoluteLayout.LayoutBounds="0,25,0.85,44" AbsoluteLayout.LayoutFlags="WidthProportional" BackgroundColor="Transparent" SelectedIndexChanged="ChangeValueHandler">
+                    <Picker.Items>
+                        <x:String>Small</x:String>
+                        <x:String>Medium</x:String>
+                        <x:String>Large</x:String>
+                        <x:String>Standard</x:String>
+                        <x:String>Custom Cell</x:String>
+                    </Picker.Items>
+                </local:CustomPickerRenderer>
+                <local:MyEntry x:Name="SizeEntry" TextColor="White" AbsoluteLayout.LayoutBounds="0,25,0.85,44" AbsoluteLayout.LayoutFlags="WidthProportional" IsVisible="False">
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </local:MyEntry>
+
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="13" Grid.ColumnSpan="2">
+                    <Label Text="Description" FontSize="16" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,130,30" AbsoluteLayout.LayoutFlags="None">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                            <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <local:MyEntry x:Name="description" Placeholder="(Optional in Description)" PlaceholderColor="LightGray" TextColor="White" AbsoluteLayout.LayoutBounds="0,25,0.85,50" AbsoluteLayout.LayoutFlags="WidthProportional" >
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Regular_1" />
+                            <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </local:MyEntry>
+            </AbsoluteLayout>
+          
+
+        </Grid>
+        </ScrollView>
+
+        <Grid Grid.Row="0" Grid.Column="0" RowSpacing="0" ColumnSpacing="0" IsVisible="False" x:Name="schduleGrid">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="2" Padding="-10,0,-10,-5">
+                <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" Opacity="0.77" />
+            </AbsoluteLayout>
+
+            <ListView Grid.Row="1" Grid.ColumnSpan="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0" Margin="3" HasShadow="False" OutlineColor="Transparent" BackgroundColor="Transparent">
+                                <StackLayout>
+                                    <local:CustomButtonText  Text="Now" BackgroundColor="#384b6d" />
+
+                                    <local:CustomButtonText  Text="Later" BackgroundColor="#384b6d" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            
+            
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" RowSpacing="0" ColumnSpacing="0" x:Name="listSection1" >
+            <AbsoluteLayout BackgroundColor="#262b3f">
+                 <BoxView BackgroundColor="#2c3144" AbsoluteLayout.LayoutBounds="0,1,1,30" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+            </AbsoluteLayout>
+            
+            <AbsoluteLayout BackgroundColor="Transparent">
+                <Button x:Name="storeButton"  Text="Stores List" TextColor="White" Clicked="StoreList" AbsoluteLayout.LayoutBounds="0.5,0,215,37" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#3a3f51" BorderWidth="2"  BorderColor="#252a3d" CornerRadius="18" />
+            </AbsoluteLayout>
+        </Grid>
+        
+        <Grid Grid.Row="2" Grid.Column="0"  RowSpacing="0" ColumnSpacing="0" x:Name="listSection">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="420"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <AbsoluteLayout BackgroundColor="#2c3144" x:Name="absoluteLayout">
+
+                    <ListView x:Name="listView" BackgroundColor="Transparent" HasUnevenRows="False"  SeparatorVisibility="None" CachingStrategy="RecycleElement" AbsoluteLayout.LayoutBounds="10,10,0.92,0.65" AbsoluteLayout.LayoutFlags="SizeProportional">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="0" Margin="0" HasShadow="False" OutlineColor="Transparent" BackgroundColor="Transparent">
+                                    <AbsoluteLayout >
+                                        <Label Text="{Binding detailItem}" TextColor="White" AbsoluteLayout.LayoutBounds="5,2,260,50" AbsoluteLayout.LayoutFlags="None">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                        <Label AbsoluteLayout.LayoutBounds="5,35,280,80" AbsoluteLayout.LayoutFlags="None" />
+                                        <Button Image="editButton.png" BackgroundColor="Transparent" Clicked="EditHandler" AbsoluteLayout.LayoutBounds="0.8,5,30,30" AbsoluteLayout.LayoutFlags="XProportional" CommandParameter="{Binding .}"/>
+                                        <Button Image="deleteButtonIcon"  BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.9,5,30,30" AbsoluteLayout.LayoutFlags="XProportional" Clicked="DeleteHandler"  CommandParameter="{Binding .}"/>
+                                        <BoxView BackgroundColor="#4b556b" Opacity="0.40" AbsoluteLayout.LayoutBounds="0,40,1,2" AbsoluteLayout.LayoutFlags="WidthProportional"  />
+
+                                        </AbsoluteLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </AbsoluteLayout>
+            </Grid>
+        </Grid>
+        
+        
+        <Grid Grid.Row="3" Grid.Column="0" RowSpacing="0" ColumnSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <local:CustomButtonText Grid.Row="0" Grid.Column="0" x:Name="scheduleBtn"  Text="Schedule" Clicked="SaveEvent"  BackgroundColor="Transparent" StartColor="#2d3c54" EndColor="#262b3f" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="1,1,0.5,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+            <local:CustomButtonText Grid.Row="0" Grid.Column="1" x:Name="updateItemButton" Text="Add Item" Clicked="AddProductEvent" BackgroundColor="Transparent"  StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,0.5,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional" />
+
+
+        </Grid>
+
+
+    </Grid>
+
+
+
+
+       
+</ContentPage>

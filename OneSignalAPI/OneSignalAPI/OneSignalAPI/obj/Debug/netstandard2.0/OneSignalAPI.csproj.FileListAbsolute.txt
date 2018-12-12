@@ -1,0 +1,9 @@
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\bin\Debug\netstandard2.0\OneSignalAPI.deps.json
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\bin\Debug\netstandard2.0\OneSignalAPI.dll
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\bin\Debug\netstandard2.0\OneSignalAPI.pdb
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\obj\Debug\netstandard2.0\OneSignalAPI.csproj.CoreCompileInputs.cache
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\obj\Debug\netstandard2.0\OneSignalAPI.AssemblyInfoInputs.cache
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\obj\Debug\netstandard2.0\OneSignalAPI.AssemblyInfo.cs
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\obj\Debug\netstandard2.0\OneSignalAPI.dll
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\obj\Debug\netstandard2.0\OneSignalAPI.pdb
+C:\Users\HTTPeak\Documents\Visual Studio 2017\Projects\OneSignalAPI\OneSignalAPI\OneSignalAPI\obj\Debug\netstandard2.0\OneSignalAPI.csprojResolveAssemblyReference.cache

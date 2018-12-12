@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:accordion="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.AccordionView"
+             x:Class="OneSignalAPI.AccordionViewPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,20">
+                <Label Text="Accordion View" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" />
+                <accordion:AccordionView KeepOnlyOneItemOpen="false" Spacing="0">
+                    <accordion:AccordionView.Children>
+                        <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                            <accordion:AccordionItemView.ItemContent>
+                                <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                    <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+                                        
+                                        <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                        
+                                    </StackLayout>
+                                </StackLayout>
+                            </accordion:AccordionItemView.ItemContent>
+                        </accordion:AccordionItemView>
+                        <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                            <accordion:AccordionItemView.ItemContent>
+                                <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                    <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+
+                                        <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </accordion:AccordionItemView.ItemContent>
+                        </accordion:AccordionItemView>
+                        <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                            <accordion:AccordionItemView.ItemContent>
+                                <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                    <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+
+                                        <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </accordion:AccordionItemView.ItemContent>
+                        </accordion:AccordionItemView>
+                        <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                            <accordion:AccordionItemView.ItemContent>
+                                <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                    <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+
+                                        <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </accordion:AccordionItemView.ItemContent>
+                        </accordion:AccordionItemView>
+                        <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                            <accordion:AccordionItemView.ItemContent>
+                                <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                    <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+
+                                        <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </accordion:AccordionItemView.ItemContent>
+                        </accordion:AccordionItemView>
+                        <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                            <accordion:AccordionItemView.ItemContent>
+                                <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                    <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+
+                                        <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </accordion:AccordionItemView.ItemContent>
+                            <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                                <accordion:AccordionItemView.ItemContent>
+                                    <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                        <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+
+                                            <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </accordion:AccordionItemView.ItemContent>
+                            </accordion:AccordionItemView>
+                            <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                                <accordion:AccordionItemView.ItemContent>
+                                    <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                        <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+
+                                            <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </accordion:AccordionItemView.ItemContent>
+                                <accordion:AccordionItemView Text="Element #1" ActiveTextColor="Blue" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                                    <accordion:AccordionItemView.ItemContent>
+                                        <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                            <StackLayout Padding="5,15" BackgroundColor="Silver" Orientation="Horizontal">
+
+                                                <Label Text="Content #1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </accordion:AccordionItemView.ItemContent>
+                                </accordion:AccordionItemView>
+                            </accordion:AccordionItemView>
+                        </accordion:AccordionItemView>
+
+                        <accordion:AccordionItemView Text="Element #2" IsOpen="true" ActiveTextColor="White" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight" RotateImages="true">
+                            <accordion:AccordionItemView.ItemContent>
+                                <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                    <StackLayout Padding="5,15" BackgroundColor="Red">
+                                        <Label Text="Content #2" HorizontalOptions="Center" TextColor="White" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </accordion:AccordionItemView.ItemContent>
+                        </accordion:AccordionItemView>
+                        <accordion:AccordionItemView InnerPadding="10,0" Border="2,3,0,10" BorderColor="Purple" Text="Element #3" ActiveTextColor="White" TextColor="White" ButtonBackgroundColor="#0067B7" ButtonActiveBackgroundColor="#0067B7" TextPosition="Left" RightImage="arrowRight"
+                            RotateImages="true">
+                            <accordion:AccordionItemView.ItemContent>
+                                <StackLayout Padding="0.5,0,0.5,0.5" BackgroundColor="Black">
+                                    <StackLayout Padding="5,15" BackgroundColor="Green">
+                                        <Label Text="Content #3" HorizontalOptions="Center" TextColor="White" FontSize="20" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </accordion:AccordionItemView.ItemContent>
+                        </accordion:AccordionItemView>
+                    </accordion:AccordionView.Children>
+                </accordion:AccordionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

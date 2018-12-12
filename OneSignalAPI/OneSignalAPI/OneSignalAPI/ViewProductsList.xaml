@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.ViewProductsList"
+             BackgroundImage="bkg2.png">
+
+    <ScrollView>
+    <StackLayout>
+            <Label Text="View Product List" HorizontalOptions="Center" FontSize="18" />
+            <ListView x:Name="listView" AbsoluteLayout.LayoutBounds="39,660,269,250" AbsoluteLayout.LayoutFlags="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding detailItem}" Detail="{Binding store}" TextColor="#aed582" DetailColor="White" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

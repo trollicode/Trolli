@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.PaymentCardInfo"  xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI" >
+
+
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <AbsoluteLayout Grid.Row="0" Grid.Column="0" Padding="-10,0,-10,-5">
+            <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        </AbsoluteLayout>
+        <ScrollView>
+            <Grid Grid.Row="0" Grid.Column="0" RowSpacing="0" ColumnSpacing="0" Padding="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ActivityIndicator x:Name="activIndicator" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2" AbsoluteLayout.LayoutFlags="All"/>
+
+                <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                    <Button Image="menu.png" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="2,10,20,20" AbsoluteLayout.LayoutFlags="None" />
+                </AbsoluteLayout>
+
+              
+                <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+
+                    <Label Text="Payment Card Information" TextColor="White" FontSize="36" >
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Medium_1" />
+                                <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+
+                </StackLayout>
+                <AbsoluteLayout Grid.Row="2" Grid.ColumnSpan="2" >
+                    <BoxView BackgroundColor="#0a91d2" AbsoluteLayout.LayoutBounds="0,25,28,2" AbsoluteLayout.LayoutFlags="None"/>
+                </AbsoluteLayout>
+
+                <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+                    <Label Text="CARDHOLDERS NAME" TextColor="#aed582">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <local:MyEntry x:Name="cardHolderName" Text="" PlaceholderColor="LightGray" Placeholder="e.g. John Smith" TextColor="White">
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </local:MyEntry>
+
+
+
+                    <Label Text="CARD NUMBER" TextColor="#aed582">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <local:MyEntry x:Name="cardNumber" Text="" PlaceholderColor="LightGray" Placeholder="e.g. 1234 5678 9123 4567" TextColor="White" Keyboard="Numeric">
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </local:MyEntry>
+
+
+
+                    <Label Text="EXPIRATION DATE" TextColor="#aed582" >
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <local:MyEntry x:Name="experiationDate" Text="" PlaceholderColor="LightGray" Placeholder="e.g. 09/21" TextColor="White">
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </local:MyEntry>
+
+                    <Label Text="CVC/CVV" TextColor="#aed582">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <local:MyEntry x:Name="cvcNumber" Text="" PlaceholderColor="LightGray" Placeholder="e.g. 235" TextColor="White" Keyboard="Numeric" >
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Raleway-Regular_1" />
+                                <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </local:MyEntry>
+                    <Label Text="3 or 4 Digit Code" TextColor="#aed582" />
+                   
+                </StackLayout>
+                
+
+            </Grid>
+        </ScrollView>
+
+
+        <Grid Grid.Row="0" Grid.Column="0" x:Name="searchText" IsVisible="False">
+            <AbsoluteLayout >
+
+                <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1"  AbsoluteLayout.LayoutFlags="SizeProportional" Opacity="0.77" />
+                <Label  Text="We have sent notifications to the nearest Smart Buyers. We will notify you once it is accepted." HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="18" TextColor="White" AbsoluteLayout.LayoutBounds="0.5,0.5,230,180" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Raleway-Medium_1" />
+                            <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </AbsoluteLayout>
+
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" RowSpacing="0" ColumnSpacing="0" >
+            <local:CustomButtonText  Text="Confirm" Clicked="FindSmartBuyer" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" />
+        </Grid>
+
+    </Grid>
+
+
+
+
+</ContentPage>

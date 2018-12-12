@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.StoresAdd"
+              xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+            >
+    <AbsoluteLayout Padding="-5,-5,-5,-5">
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <Label Text="Select Store" FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="39,210,85,20" AbsoluteLayout.LayoutFlags="None" >
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <autocomplete:SfAutoComplete HeightRequest="40" TextColor="White" x:Name="autoComplete" DropDownBackgroundColor="#aed582" AbsoluteLayout.LayoutBounds="39,260,269,44" AbsoluteLayout.LayoutFlags="None"/>
+    </AbsoluteLayout>
+</ContentPage>

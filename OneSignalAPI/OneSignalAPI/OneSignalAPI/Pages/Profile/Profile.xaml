@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage 
+            
+            
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RealTrolli.Profile"
+    
+             xmlns:pages="clr-namespace:OneSignalAPI"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI">
+    <MasterDetailPage.Master>
+        <pages:MenuPageMaster />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <Grid RowSpacing="0" ColumnSpacing="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <AbsoluteLayout Grid.Row="0" Grid.Column="0" Padding="-10,0,-10,-5">
+                    <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+                </AbsoluteLayout>
+
+                <AbsoluteLayout Grid.Row="0" Grid.Column="0" >
+
+                    <ActivityIndicator x:Name="loaderAI" AbsoluteLayout.LayoutBounds="0.5,0.5,50,50" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                </AbsoluteLayout>
+
+
+                <ScrollView>
+                    <Grid Grid.Row="0" Grid.Column="0"  Padding="20,20,20,20">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="130" />
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="0" />
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="0" />
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="0" />
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="0" />
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="0" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                            <Button Image="menu.png" Clicked="MenuNavigate" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="2,10,20,20" AbsoluteLayout.LayoutFlags="None" />
+                        </AbsoluteLayout>
+
+                        <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                            <Label Text="Profile" TextColor="White" FontSize="28" >
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-Medium_1" />
+                                        <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+
+                        <AbsoluteLayout Grid.Row="2" Grid.ColumnSpan="2">
+                            <BoxView BackgroundColor="#0a91d2" AbsoluteLayout.LayoutBounds="0,0,28,2" AbsoluteLayout.LayoutFlags="None"/>
+                        </AbsoluteLayout>
+
+                        <AbsoluteLayout Grid.Row="3" Grid.ColumnSpan="2">
+                            <controls:CircleImage Source="logo2.jpg" x:Name="profileImage" Aspect="Fill" AbsoluteLayout.LayoutBounds="0.5,0.5,120,120"  AbsoluteLayout.LayoutFlags="PositionProportional" />
+                        </AbsoluteLayout>
+
+                        <AbsoluteLayout Grid.Row="4" Grid.ColumnSpan="2">
+                            <Label Text="FULL NAME: " FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,1,20" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label x:Name="nameTxt" FontSize="14" TextColor="White" AbsoluteLayout.LayoutBounds="0,30,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </AbsoluteLayout>
+
+                        <AbsoluteLayout Grid.Row="6" Grid.ColumnSpan="2">
+                            <Label Text="EMAIL: " FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,1,20" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" >
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label x:Name="emailTxt"  TextColor="White" FontSize="14" AbsoluteLayout.LayoutBounds="0,30,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </AbsoluteLayout>
+
+                        <StackLayout Grid.Row="8" Grid.ColumnSpan="2">
+                            <Label Text="SUBURB: " FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,1,20" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" >
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label x:Name="subrubTxt"  TextColor="White" FontSize="14" AbsoluteLayout.LayoutBounds="0,30,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="10" Grid.ColumnSpan="2">
+                            <Label Text="STATE: " FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,1,20" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label x:Name="stateTxt"  TextColor="White" FontSize="14" AbsoluteLayout.LayoutBounds="0,30,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="12" Grid.ColumnSpan="2">
+                            <Label Text="POSTAL CODE: " FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0,0,1,20" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" >
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label x:Name="postalTxt"  TextColor="White" AbsoluteLayout.LayoutBounds="0,30,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+                </ScrollView>
+                <Grid Grid.Row="1" Grid.Column="0" RowSpacing="0" ColumnSpacing="0" >
+                    <local:CustomButtonText x:Name="btnSignUp" Text="Edit Your Profile" Clicked="EditProfile" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd"  />
+                </Grid>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
+
+        

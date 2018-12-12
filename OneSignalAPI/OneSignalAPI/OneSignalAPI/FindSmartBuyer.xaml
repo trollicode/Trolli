@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="False"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.FindSmartBuyer" xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI" >
+    <AbsoluteLayout Padding="-10,0,-10,0">
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <ActivityIndicator x:Name="activIndicator" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2" AbsoluteLayout.LayoutFlags="All" />
+        <local:CustomButtonText Text="Find" Clicked="FindSmart" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+        <ListView x:Name="listView" AbsoluteLayout.LayoutBounds="20,50,200,300" AbsoluteLayout.LayoutFlags="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="Home" AbsoluteLayout.LayoutBounds="20,20,130,50" AbsoluteLayout.LayoutFlags="None"/>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+     </AbsoluteLayout>
+</ContentPage>
